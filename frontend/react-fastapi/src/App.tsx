@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./App.css";
 import Footer from "./Footer/Footer";
@@ -7,7 +7,7 @@ import Contacts from "./App-menu/Contacts";
 
 function App() {
   const [activeTab, setActiveTab] = useState<"contacts" | "info" | null>(null);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="container">
