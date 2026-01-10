@@ -1,0 +1,84 @@
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 10vh;
+
+  display: flex;
+  flex-direction: row;       /* riga orizzontale */
+  justify-content: center;   /* centrato orizzontalmente */
+  align-items: center;       /* centrato verticalmente */
+  gap: 1.5rem;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+.datetime {
+  font-size: 0.95rem;
+  color: #666;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin: 0;                 /* importantissimo per centraggio */
+}
+
+.language-selector {
+  position: relative;
+  display: inline-block;      /* necessario per pseudo-elemento */
+  padding-bottom: 4px;        /* spazio tra testo e bordo */
+  margin: 0;                   /* 🔥 tolto il margin-bottom che rompeva il centraggio */
+  transition: all 0.4s ease;
+}
+
+/* pseudo-elemento “falso bordo” */
+.language-selector::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.language-selector:hover::after {
+  transform: scaleX(1);
+}
+
+/* Gradienti bandiera */
+.language-selector.lang-it::after { background: linear-gradient(135deg, #008C45, #F4F5F0, #CD212A); }
+.language-selector.lang-en::after { background: linear-gradient(135deg, #C8102E, #F4F5F0, #C8102E); }
+.language-selector.lang-es::after { background: linear-gradient(135deg, #C8102E, #efd112, #C8102E); }
+.language-selector.lang-de::after { background: linear-gradient(135deg, #efd112, #C8102E, #000000); }
+.language-selector.lang-fr::after { background: linear-gradient(135deg, #1910c8, #F4F5F0, #C8102E); }
+
+/* stile select */
+.language-selector select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  transition: transform 0.15s ease;
+}
+
+/* hover / click / focus */
+.language-selector select:hover { transform: scale(1.05); }
+.language-selector select:active { transform: scale(0.95); }
+.language-selector select:focus { transform: scale(1.02); }
