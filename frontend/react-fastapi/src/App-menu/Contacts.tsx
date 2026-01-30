@@ -1,33 +1,22 @@
-
-import {FaFacebook, FaInstagram, FaLinkedin, FaEnvelope, FaPhone} from "react-icons/fa";
+import {FaFacebook, FaDropbox, FaInstagram, FaLinkedin, FaEnvelope, FaPhone} from "react-icons/fa";
+import { useContext } from "react";
+import { ConfigContext } from "../config/ConfigProvider";
+import "./Contacts.css";
 
 function Contacts() {
+  const config = useContext(ConfigContext);
+  if (!config) return null;
+    const { contact, social } = config;
+
   return (
     <>
-      <div className="contact-row">
-        <FaEnvelope className="icon" />
-        <span className="label">Email</span>
-        <a href="mailto:info@example.com">info@example.com</a>
-      </div>
-      <div className="contact-row">
-        <FaPhone className="icon" />
-        <span className="label">Telefono</span>
-        <a href="tel:+39123456789">+39 123 456 789</a>
-      </div>
-      <div className="contact-row">
-        <FaFacebook className="icon facebook" />
-        <span className="label">Facebook</span>
-        <a href="#" target="_blank" rel="noreferrer">facebook.com/tuapagina </a>
-      </div>
-      <div className="contact-row">
-        <FaLinkedin className="icon linkedin" />
-        <span className="label">LinkedIn</span>
-        <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/tuoprofilo</a>
-      </div>
-      <div className="contact-row">
-        <FaInstagram className="icon instagram" />
-        <span className="label">Instagram</span>
-        <a href="#" target="_blank" rel="noreferrer">@tuoprofilo</a>
+      <div className="row">
+        <div className="col-2 item"><FaPhone className="icon"/><a>Phone: {contact.phone}</a></div>
+        <div className="col-2 item"><FaEnvelope className="icon" /><a>{contact.email}</a></div>
+        <div className="col-2 item"><FaDropbox className="icon" /><a>Dropbox</a></div>
+        <div className="col-2 item"><FaInstagram className="icon" /><a href={social.instagram} target="_blank" rel="noreferrer">Instagram</a></div>
+        <div className="col-2 item"><FaFacebook className="icon" /><a href={social.facebook} target="_blank" rel="noreferrer">Facebook</a></div>
+        <div className="col-2 item"><FaLinkedin className="icon" /><a href={social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></div>
       </div>
     </>
   );

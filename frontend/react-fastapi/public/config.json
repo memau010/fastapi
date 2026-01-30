@@ -1,0 +1,19 @@
+{
+  "contact": {
+    "email": "mauro.rosato@gmail.com",
+    "phone": "334 3639176"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/mauro.rosato1/",
+    "instagram": "https://www.instagram.com/mau.rosato/",
+    "linkedin": "https://www.linkedin.com/in/mauro-rosato-13a3021a1/"
+  },
+  "profileInfo":{
+    "imgUrl":"",
+    "fullName":"",
+    "residence":"",
+    "degree":"",
+    "birthDate":"",
+    "generalInfo":""
+  }
+}

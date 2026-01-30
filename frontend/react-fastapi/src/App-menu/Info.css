@@ -1,0 +1,45 @@
+.profile {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* FOTO */
+.profile-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.profile-info li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.profile-info p {
+  color: #444;
+  line-height: 1.6;
+}
