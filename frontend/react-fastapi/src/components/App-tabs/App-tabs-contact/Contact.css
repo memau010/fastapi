@@ -1,0 +1,33 @@
+.row {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+.item {
+  display: flex;
+  flex-direction: column;   /* uno sotto l’altro */
+  align-items: center;      /* centrati orizzontalmente */
+  justify-content: center;  /* centrati verticalmente (se c’è altezza) */
+  gap: 0.5rem;              /* spazio tra icona e label */
+  text-align: center;
+}
+.icon {
+  color: rgb(165, 165, 165);
+  font-size: 2rem; /* o usa height:50% se il genitore ha altezza */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.25);
+}
+
+.icon.facebook { color: #1877f2; }
+.icon.linkedin { color: #0a66c2; }
+.icon.instagram { color: #e4405f; }

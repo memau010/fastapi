@@ -1,27 +1,38 @@
 import "./App.css";
-import { useState } from "react";
+/* import { useState } from "react"; */
+import { AiOutlineLogin } from "react-icons/ai";
+import { CiCirclePlus } from "react-icons/ci";
+/* import { db } from "./firebase"; */
 import { useTranslation } from "react-i18next";
-import CustomHeader from "./Header/Header";
-import CustomFooter from "./Footer/Footer";
-import Info from "./App-menu/Info";
-import Contacts from "./App-menu/Contacts";
+import CustomHeader from "./components/Header/Header";
+import CustomFooter from "./components/Footer/Footer";
 import "./i18n";
+import Tabs from "./components/App-tabs/Tabs";
+
+import '@coreui/coreui/dist/css/coreui.min.css'
+
+console.log('ENV COMPLETO:', import.meta.env);
+console.log(import.meta.env.VITE_FIREBASE_API_KEY);
+
 function App() {
-  const [activeTab, setActiveTab] = useState<"contacts" | "info" | null>(null);
   const { t } = useTranslation();
 
   return (
+    
     <div className="page">
-      <header className="header"><CustomHeader /></header>
+      <div className="custom-header"><CustomHeader /></div>
       <section className="core">
-        <h1 className="title">
-          {t("app.welcome")}
+        <h2 className="title">{t("app.welcome")}
           <span className="sparkle s1">✧</span>
           <span className="sparkle s2">✦</span>
           <span className="sparkle s3">✧</span>
-        </h1>
-        <p className="subtitle">{t("app.subtitle")}</p>
+        </h2>
+        <div className="row">
+          <div className="col-11"></div>
+          <div className="col-1"><AiOutlineLogin /><CiCirclePlus /></div>
+        </div>
         <div className="gradient-line"></div>
+{/*
         <div className="core-content">
           <div className="button-grid">
             <button>{t("app.home")}</button>
@@ -30,14 +41,18 @@ function App() {
             <button className={activeTab === "info" ? "active" : ""} onClick={() => setActiveTab("info")}>{t("app.info")}</button>
           </div>
         </div>
+*/}
       </section>
       <main className="body">
+        <div className="flex-grow-1 d-flex"><Tabs /></div> 
+{/*        
         <div className={`tab-menu ${activeTab ? "show" : ""}`}>
           {activeTab === "contacts" && (<Contacts />)}
           {activeTab === "info" && (<Info />)}
         </div>
+*/}
       </main>
-      <footer className="footer"><CustomFooter /></footer>
+      <div className="custom-footer"><CustomFooter /></div>
     </div>
   /*
   <div className="close">

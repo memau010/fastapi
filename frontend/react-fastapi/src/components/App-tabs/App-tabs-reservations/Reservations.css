@@ -1,0 +1,109 @@
+.rbc-calendar {
+  font-family: Arial, sans-serif;
+  background-color: #b6d1ff7d; /* pastello chiaro */
+  border-radius: 8px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #68b0e451;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.rbc-toolbar button {
+  background: rgba(255, 255, 255, 0.148);
+  border: 1px solid #cccccc27;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 0.2rem;
+}
+
+.rbc-toolbar button.rbc-active {
+  background: #b6d1ff7d;
+  color: white;
+}
+
+.rbc-event {
+  background: #3e027b83;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.rbc-today {
+  background-color: #87883cc7;
+}
+
+/* rende responsive */
+.rbc-time-view,
+.rbc-day-slot,
+.rbc-row-content,
+.rbc-time-column {
+  height: auto !important;
+}
+
+.rbc-time-content {
+  min-height: 10rem;
+}
+
+/* === BORDO E CONTENITORE (MESE / SETTIMANA / GIORNO) === */
+.rbc-month-view,
+.rbc-time-view {
+  border: 1px solid #b6d1ff7d;
+  border-radius: 4px;
+  padding: 0.5%;
+  box-sizing: border-box;
+}
+
+/* === SEPARATORI ORIZZONTALI === */
+
+/* righe nella vista mese */
+.rbc-month-row + .rbc-month-row {
+  border-top: 1px solid #b6d1ff7d;
+}
+
+/* separazione header / corpo in week & day */
+.rbc-time-header {
+  border-bottom: 5px none #ffb6b67d;
+}
+
+/* === SEPARATORI VERTICALI === */
+
+/* celle vista mese */
+.rbc-day-bg + .rbc-day-bg {
+  border: 0px solid rgb(136, 86, 86);
+}
+
+/* colonne vista settimana / giorno */
+.rbc-time-content > * + * {
+  border: 0px solid rgba(172, 14, 14, 0.835);
+}
+
+/* celle del mese precedente / successivo */
+.rbc-off-range-bg {
+  background-color: rgba(15, 15, 15, 0.25); /* pastello chiaro */
+  pointer-events: none;
+}
+
+/* numero del giorno (testo) */
+.rbc-off-range {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.calendar-box {
+  width: 90%;
+  margin: 1rem auto;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.914), 0 8px 16px rgba(0,0,0,0.12);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
